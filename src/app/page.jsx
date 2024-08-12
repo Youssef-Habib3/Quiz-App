@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useRef } from "react";
 
 import data from "./html_questions.json";
+import { motion } from "framer-motion";
 
 console.log(data[0].title);
 
@@ -81,8 +82,13 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-[100vh] min-w-[100vw] select-none flex justify-center items-center">
-      <div className="border rounded-lg p-4 bg-white w-[90%] md:w-2/4">
+    <div className="min-h-[100vh] min-w-[100vw] select-none flex justify-center items-center overflow-x-hidden">
+      <motion.div
+        initial={{ opacity: 0, x: "100%" }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 1, type: "spring", mass: 2 }}
+        className="border rounded-lg p-4 bg-white w-[90%] md:w-2/4"
+      >
         <header className="flex justify-between items-center gap-4 border-b border-black/50 pb-3 text-3xl">
           <h1 className="font-bold">Simple Quiz</h1>
           <p>
@@ -149,7 +155,7 @@ const Home = () => {
             <HoverCardContent>This is my web site, Visit it?</HoverCardContent>
           </HoverCard>
         </footer>
-      </div>
+      </motion.div>
     </div>
   );
 };
