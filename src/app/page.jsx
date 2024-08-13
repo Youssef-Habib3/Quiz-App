@@ -141,7 +141,7 @@ const Home = () => {
           <section className="results"></section>
         </main>
 
-        <footer className="border-t border-black/50 pt-3 flex justify-center items-center cursor-pointer">
+        <footer className="border-t border-black/50 pt-3 flex justify-center items-center">
           <HoverCard>
             <HoverCardTrigger>
               <Link
